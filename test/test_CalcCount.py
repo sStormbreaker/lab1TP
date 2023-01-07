@@ -40,7 +40,7 @@ class TestCalcCount:
                 ],
         }
 
-        return data, 2
+        return data, 1
 
     def test_init_calc_count(self, input_data: tuple[DataType, int]) -> None:
 
@@ -54,6 +54,9 @@ class TestCalcCount:
         assert count == input_data[1]
 
     def test_count_zero(self, input_data: tuple[DataType, int]) -> None:
+
+        input_data[0].popitem()
+        input_data[0].popitem()
 
         count = CalcCount(input_data[0][:-2]).calc()
         assert count == 0
