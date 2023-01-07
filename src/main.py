@@ -2,8 +2,8 @@
 import argparse
 import sys
 
-from CalcRating import CalcRating
-from TextDataReader import TextDataReader
+from ReadJSON import ReaderJSON
+from CalcCount import CalcCount
 
 
 def get_path_from_arguments(args) -> str:
@@ -17,12 +17,14 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    reader = TextDataReader()
+    reader = ReaderJSON()
     students = reader.read(path)
-    print("Students: ", students)
 
-    rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    for student in students:
+        print("Student: ", student, students[student])
+
+    count = CalcCount(students).calc()
+    print("\nCount students with mark lower than 61: ", count)
 
 
 if __name__ == "__main__":
