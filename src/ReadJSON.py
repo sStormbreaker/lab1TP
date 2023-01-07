@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Types import DataType
 from json import load as jsLoad
 from DataReader import DataReader
