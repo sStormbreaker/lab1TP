@@ -14,7 +14,7 @@ class ReaderJSON(DataReader):
             studentNames = dataJSON.keys()
 
             for student in studentNames:
-                tupleList = [(k,int(v)) for k,v in dataJSON[student].items()]
+                tupleList = [(k, int(v)) for k, v in dataJSON[student].items()]
                 self.students[student] = tupleList
-        
+
         return self.students

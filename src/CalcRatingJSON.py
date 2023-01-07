@@ -5,7 +5,7 @@ RatingType = dict[str, float]
 
 
 class CalcRatingJSON:
-    
+
     def __init__(self, data: DataType) -> None:
         self.data: DataType = data
         self.rating: RatingType = {}
