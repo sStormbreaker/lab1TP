@@ -58,5 +58,5 @@ class TestCalcCount:
         input_data[0].popitem()
         input_data[0].popitem()
 
-        count = CalcCount(input_data[0][:-2]).calc()
+        count = CalcCount(input_data[0]).calc()
         assert count == 0
