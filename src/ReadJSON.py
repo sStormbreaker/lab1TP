@@ -9,7 +9,7 @@ class ReaderJSON(DataReader):
     def __init__(self) -> DataType:
         self.students: DataType = {}
 
-    def read(self, path: str):
+    def read(self, path: str) -> None:
         with open(path, encoding='utf-8') as file:
             dataJSON = jsLoad(file)
             studentNames = dataJSON.keys()
